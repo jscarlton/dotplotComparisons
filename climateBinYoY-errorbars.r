@@ -9,12 +9,14 @@ lowerCIpost = c(70.4,75.7,66.5,67.7,60.7)
 upperCIpost = c(76.9,87.4,79.6,81.1,73.6)
 
 
-# Generate numbers for the y-axis.
+# Generate numbers for the y-axis. Note that we won't actually print the y-axis, but this helps to set it up.
+
 y.axis <- length(severity):1
 
-# Generate an adjustment value to move the dots up or down so you can see the intervals
+# Generate an adjustment value to move the dots up or down so you can see the intervals. You can, uh, adjust the adjustment value until you like how it looks.
 adjustment <- 0.15
 
+# Now, the actual graph.
 png("climateBinYoY-CIs.png", height = 6, width = 8.5, units = "in",res=600)
 
 
