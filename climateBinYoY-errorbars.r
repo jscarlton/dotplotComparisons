@@ -64,11 +64,11 @@ points(post, y.axis - adjustment, pch = 21, cex = 1.4, bg = "gray", lwd = 0.5 )
 
 # Use a combination of the arrows and segments command to create the error bars. The segments makes the lines and the arrows makes the end of the lines.
 
-arrows(lowerCIpre, y.axis + adjustment, upperCIpre, y.axis + adjustment, code = 3, length = 0.05, angle = 90, col = "gray69", lwd = 2.5)
-segments(lowerCIpre, y.axis + adjustment, upperCIpre, y.axis + adjustment, col = "gray", lwd = 5, lend = 1)
+arrows(lowerCIpre, y.axis + adjustment, upperCIpre, y.axis + adjustment, code = 3, length = 0.05, angle = 90, col = "gray70", lwd = 2.5)
+segments(lowerCIpre, y.axis + adjustment, upperCIpre, y.axis + adjustment, col = "gray70", lwd = 5, lend = 1)
 
-arrows(lowerCIpost, y.axis - adjustment, upperCIpost, y.axis - adjustment, code = 3, length = 0.05, angle = 90, col = "gray69", lwd = 2.5)
-segments(lowerCIpost, y.axis - adjustment, upperCIpost, y.axis - adjustment, col = "gray69", lwd = 5, lend = 1)
+arrows(lowerCIpost, y.axis - adjustment, upperCIpost, y.axis - adjustment, code = 3, length = 0.05, angle = 90, col = "gray70", lwd = 2.5)
+segments(lowerCIpost, y.axis - adjustment, upperCIpost, y.axis - adjustment, col = "gray70", lwd = 5, lend = 1)
 
 # re-draw the dots to make them appear over the CI lines
 points(pre, y.axis + adjustment, pch = 21, cex = 1.4, bg = "white", lwd = 0.5 )
