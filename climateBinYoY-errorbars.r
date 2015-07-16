@@ -14,7 +14,7 @@ upperCIpost = c(76.9,87.4,79.6,81.1,73.6)
 y.axis <- length(severity):1
 
 # Generate an adjustment value to move the dots up or down so you can see the intervals. You can, uh, adjust the adjustment value until you like how it looks.
-adjustment <- 0.15
+adjustment <- 0.11
 
 # Now, the actual graph.
 png("climateBinYoY-CIs.png", height = 6, width = 8.5, units = "in",res=600)
@@ -22,20 +22,18 @@ png("climateBinYoY-CIs.png", height = 6, width = 8.5, units = "in",res=600)
 
 par(mar=c(4.5,7.5,.5,1), lheight = .3)
 
-plot(pre, y.axis + adjustment, type = "p", axes=F, xlab = "% Believing in climate change", ylab = "", cex = 1.4, xlim = c(0,100), ylim = c(min(y.axis - adjustment), max(y.axis + adjustment)), main = "")
+plot(pre, y.axis + adjustment, type = "p", axes=F, xlab = "% Believing in climate change", ylab = "", cex = 1.4, xlim = c(0,100), ylim = c(min(y.axis - adjustment), max(y.axis + adjustment)), main = "", color = "#fee6ce", lwd = 0.5)
 
 abline(h = y.axis, lty = 2, lwd = 1, col = "light grey")
 
-points(post, y.axis - adjustment, pch = 21, cex = 1.4, bg = "gray" )
-
 # CI Bars using the arrows command. lwd adjusts line width
-arrows(lowerCIpre, y.axis + adjustment, upperCIpre, y.axis + adjustment, code = 3, length = 0.05, angle = 90)
+arrows(lowerCIpre, y.axis + adjustment, upperCIpre, y.axis + adjustment, code = 3, length = 0.07, angle = 90)
 
-arrows(lowerCIpost, y.axis - adjustment, upperCIpost, y.axis - adjustment, code = 3, length = 0.05, angle = 90)
+arrows(lowerCIpost, y.axis - adjustment, upperCIpost, y.axis - adjustment, code = 3, length = 0.07, angle = 90)
 
-# re-draw the dots to make them appear over the CI lines
-points(pre, y.axis + adjustment, pch = 21, cex = 1.4, bg = "white" )
-points(post, y.axis - adjustment, pch = 21, cex = 1.4, bg = "gray" )
+# re-draw the original dots to make them appear over the CI lines and add in the second set of dots
+points(pre, y.axis + adjustment, pch = 21, cex = 2, bg = "#fee6ce", lwd = 0.5 )
+points(post, y.axis - adjustment, pch = 21, cex = 2, bg = "#e6550d", lwd =0.5 )
 
 # Add in the axes
 axis(1,at = seq(0,100, by = 20), label = seq(0,100, by = 20), mgp = c(.5,.6,.50), cex.axis = 1)
@@ -44,9 +42,9 @@ axis(2, at = y.axis, label = severity, las = 1, tick = T, cex.axis =1.0)
 
 # Key labels
 text(15,4.5, "Pre-drought", adj=0, cex = .8)
-text(15,4.35, "Post-drought", adj=0, cex = .8)
-points(13,4.51, cex = 1.4)
-points(13,4.36,pch = 21, bg = "gray", cex = 1.4)
+text(15,4.3, "Post-drought", adj=0, cex = .8)
+points(13,4.51, cex = 2, pch = 21, bg ="#fee6ce", lwd =0.5 )
+points(13,4.31, cex = 2, pch = 21, bg = "#e6550d", lwd =0.5 )
 
 dev.off()
 
