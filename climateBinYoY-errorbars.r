@@ -1,4 +1,4 @@
-# Set up data. Severity will provide the labels, pre is the pre-drought mean (i.e., effect size estimate), post is the post-drought mean. lowerCIpre and upperCIpre are the lower and upper bounds of the 95% confidence intervals for the pre-drought data, lowerCIpost and upperCIpost are the same for the post-drought data. If I were fancier, I could calculate those and store them as variables rather than manually input them from prior analysis. But I'm not that fancy.
+# Set up data. Severity will provide the labels, pre is the pre-drought mean (i.e., point estimate), post is the post-drought mean. lowerCIpre and upperCIpre are the lower and upper bounds of the 95% confidence intervals for the pre-drought data, lowerCIpost and upperCIpost are the same for the post-drought data. If I were fancier, I could calculate those and store them as variables rather than manually input them from prior analysis. But I'm not that fancy.
 
 severity = c("Overall average","Lowest quartile","Second quartile","Third quartile","Highest quartile")
 pre = c(72.8,73.2,74.2,73.8,70.5)
