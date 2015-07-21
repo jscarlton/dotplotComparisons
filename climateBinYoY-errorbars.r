@@ -16,13 +16,13 @@ y.axis <- length(severity):1
 # Generate an adjustment value to move the dots up or down so you can see the intervals. You can, uh, adjust the adjustment value until you like how it looks.
 adjustment <- 0.11
 
-# Now, the actual graph.
+# Now, the actual graph. I selected the colors from colorbrewer2.org, using a single-hue sequential palette that was both colorblind and photocopier safe.
 png("climateBinYoY-CIs.png", height = 6, width = 8.5, units = "in",res=600)
 
 
 par(mar=c(4.5,7.5,.5,1), lheight = .3)
 
-plot(pre, y.axis + adjustment, type = "p", axes=F, xlab = "% Believing in climate change", ylab = "", cex = 1.4, xlim = c(0,100), ylim = c(min(y.axis - adjustment), max(y.axis + adjustment)), main = "", color = "#fee6ce", lwd = 0.5)
+plot(pre, y.axis + adjustment, type = "p", axes=F, xlab = "% Believing in climate change", ylab = "", cex = 1.4, xlim = c(0,100), ylim = c(min(y.axis - adjustment), max(y.axis + adjustment)), main = "", col = "#fee6ce", lwd = 0.5)
 
 abline(h = y.axis, lty = 2, lwd = 1, col = "light grey")
 
@@ -51,7 +51,7 @@ dev.off()
 
 # Another way of displaying the error bars is as plain old lines, not arrows. This requires a few hacks (using segments and arrows, for example) and reducing the outline of the points (using lwd) for aesthetic purposes. I think the aesthetics of this could be improved, but this will do for now.
 
-png("climateBinYoY-errorlines.png", height = 6, width = 8.5, units = "in",res=600)
+#png("climateBinYoY-errorlines.png", height = 6, width = 8.5, units = "in",res=600)
 
 par(mar=c(4.5,7.5,.5,1), lheight = .3)
 
